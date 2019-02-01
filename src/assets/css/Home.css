@@ -1,32 +1,42 @@
-.Home {
-  text-align: center;
+header nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
 }
 
-.Home-logo {
-  animation: Home-logo-spin infinite 20s linear;
-  height: 40vmin;
+header nav .item:not(:last-child) {
+    margin-right: 15px
 }
 
-.Home-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header nav .logo img {
+    width: 100px;
 }
 
-.Home-link {
-  color: #61dafb;
+.home .container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-@keyframes Home-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home .container .titles {
+    width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.home .container .titles h2{
+    width: 50%;
+}
+
+.home .container .left {
+    width: 50%;
+    padding: 0 100px;
+}
+
+.home .container .right {
+    width: 50%;
+    padding: 0 100px;
+}
+
+.home .container .left .map {
+    width: 100%;
 }
