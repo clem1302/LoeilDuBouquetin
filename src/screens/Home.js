@@ -44,15 +44,12 @@ class Home extends Component {
 					</div>
 					<div className="right">
 						{stations && stations.map(station => {
-							let nb_pistes = 0;
-							for (let piste in station.domains)
-								if (piste !== "info")
-									nb_pistes += +station.domains[piste];
+							const nb_pistes = station.open_domains.info;
 							return <div key={station.id} style={{backgroundImage: "url("+station.images[0]+"),url(https://i.pinimg.com/originals/ba/5c/d4/ba5cd4ab883552ebd22932317aa0d5a0.jpg)", backgroundPosition: "center", backgroundSize: "cover"}}>
 								<div className="detail" >
 									<div className="title">{station.name}</div>
 									<div className="nbpiste">
-										{nb_pistes} pistes
+										{nb_pistes}
 									</div>
 									<div className="pistes">
 										<div className="green">
