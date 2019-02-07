@@ -30,6 +30,12 @@
     background-color: #FF5252;
 }
 
+.bg-green{background-color: green;}
+.bg-blue{background-color: blue;}
+.bg-red{background-color: red;}
+.bg-black{background-color: black;}
+
+
 body {
     margin: 0;
     padding: 0;
