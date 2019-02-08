@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Batsand';
+    src: url('/assets/fonts/Batsand.woff2') format('woff2'),
+    url('/assets/fonts/Batsand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 .color-primary {
     color: #0288D1;
 }
