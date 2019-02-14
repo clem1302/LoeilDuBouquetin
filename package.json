@@ -6,7 +6,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "coverage": "npm test -- --coverage",
+    "coverage": "npm test -- --coverage && codecov -t 971aa3f0-cd39-435b-95c2-a3ef081c3585",
     "prettier": "prettier --write {src,tests}/**/**/*.{js,jsx,json,scss}",
     "eject": "react-scripts eject"
   },
@@ -21,6 +21,7 @@
     "redux": "^4.0.1"
   },
   "devDependencies": {
+    "codecov": "^3.2.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "prettier": "^1.16.4"
