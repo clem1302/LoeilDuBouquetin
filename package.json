@@ -7,6 +7,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "coverage": "npm test -- --coverage",
+    "prettier": "prettier --write {src,tests}/**/**/*.{js,jsx,json,scss}",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -21,7 +22,8 @@
   },
   "devDependencies": {
     "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.7.1"
+    "enzyme-adapter-react-16": "^1.7.1",
+    "prettier": "^1.16.4"
   },
   "eslintConfig": {
     "extends": "react-app"
