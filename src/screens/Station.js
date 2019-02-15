@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Header from "../components/Header";
 import Slider from "react-slick";
 import moment from 'moment'
 import 'moment/locale/fr'
@@ -35,7 +34,7 @@ class Station extends React.Component {
 							slidesToShow: 1,
 							slidesToScroll: 1,
 						}}>
-							{station.images.map((i, index) => <img src={i} alt="image" key={index}/>)}
+							{station.images.map((i, index) => <img src={i} alt={index} key={index}/>)}
 						</Slider>
 					</div>}
 					<div className="description">

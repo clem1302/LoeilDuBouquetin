@@ -1,10 +1,9 @@
 import React, {Component} from "react";
 import axios from "axios";
-import logo from "../assets/images/logo.png";
 import map from "../assets/images/map.svg";
 import "../assets/css/Home.css";
 import {Link} from "react-router-dom";
-import Header from '../components/Header'
+import FeaturedStations from '../components/FeaturedStations'
 
 class Home extends Component {
 	state = {
@@ -13,12 +12,10 @@ class Home extends Component {
 	};
 
 	componentDidMount() {
-		console.log("componentDidMount");
 		this.setUpMap();
 	}
 
 	render() {
-		console.log("render");
 		const {stations, currentStation} = this.state;
 
 		return (
@@ -29,9 +26,9 @@ class Home extends Component {
 						{currentStation && <h2>{currentStation}</h2>}
 					</div>
 					<div className="left">
-						<object data={map} className="map" type="text/html"/>
+						<object data={map} className="map" type="text/html">Can't read SVG</object>
 					</div>
-					<div className="right">
+					<div className="right stationslist">
 						{stations && stations.map(station => {
 							const nb_pistes = station.open_domains.info;
 							return <div key={station.id} style={{backgroundImage: "url("+station.images[0]+"),url(https://i.pinimg.com/originals/ba/5c/d4/ba5cd4ab883552ebd22932317aa0d5a0.jpg)", backgroundPosition: "center", backgroundSize: "cover"}}>
@@ -62,23 +59,20 @@ class Home extends Component {
 						})}
 					</div>
 				</div>
-				<div className="bottom">
-
-				</div>
+				<FeaturedStations/>
 			</div>
 		);
 	}
 
 	resetStations = () => {
-		console.log("resetStations");
 		this.setState({stations: null, currentStation: null});
 		for (let mountain of this.mountains) {
 			mountain.style.fill = null;
 		}
 	};
 
+
 	fetchStations = async (e) => {
-		console.log("fetchStations");
 		this.resetStations();
 		const mountain             = e.currentTarget.id;
 		e.currentTarget.style.fill = "#ac3737";
@@ -112,7 +106,6 @@ class Home extends Component {
 	};
 
 	setUpMap = () => {
-		console.log("setUpMap");
 		const map  = document.body.querySelector(".map");
 		map.onload = () => {
 			const mountains = map.contentDocument.querySelectorAll("#layer101 > path");

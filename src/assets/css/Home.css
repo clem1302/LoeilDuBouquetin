@@ -114,5 +114,5 @@ header nav .logo img {
 }
 
 ::-webkit-scrollbar {
-    display: none;
+    /*display: none;*/
 }
