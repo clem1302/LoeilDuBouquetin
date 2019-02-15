@@ -26,7 +26,7 @@ class Station extends React.Component {
 					<h1>{station.name}</h1>
 				</div>
 				<div className="left">
-					{station.images && <div className="images">
+					<div className="images">
 						<Slider {...{
 							arrows: true,
 							infinite: true,
@@ -34,9 +34,9 @@ class Station extends React.Component {
 							slidesToShow: 1,
 							slidesToScroll: 1,
 						}}>
-							{station.images.map((i, index) => <img src={i} alt={index} key={index}/>)}
+							{station.images.length > 0 ? station.images.map((i, index) => <img src={i} alt={index} key={index}/>) : <img className="placeholder" src="https://i.pinimg.com/originals/ba/5c/d4/ba5cd4ab883552ebd22932317aa0d5a0.jpg" height={300}/>}
 						</Slider>
-					</div>}
+					</div>
 					<div className="description">
 						<p>{station.description}</p>
 						<p>
