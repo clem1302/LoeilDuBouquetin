@@ -23,7 +23,6 @@ class Home extends Component {
 
 		return (
 			<div className="home">
-				<Header/>
 				<div className="container">
 					<div className="titles">
 						<h2>Carte intéractive</h2>

@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/images/logo.png";
+import {Link} from "react-router-dom";
 
 class Header extends React.Component{
 	render(){
@@ -9,9 +10,9 @@ class Header extends React.Component{
 					<img src={logo} alt="l'oeil du bouquetin"/>
 				</div>
 				<div className="item">
-					<a href="/" className="color-white">
+					<Link to="/" className="color-white">
 						<h1 className="brand">L'oeil du bouquetin</h1>
-					</a>
+					</Link>
 				</div>
 			</nav>
 		</header>

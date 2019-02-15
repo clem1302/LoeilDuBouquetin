@@ -22,7 +22,6 @@ class Station extends React.Component {
 		if (!station)
 			return null;
 		return <div className="station">
-			<Header/>
 			<div className="container">
 				<div className="title">
 					<h1>{station.name}</h1>
