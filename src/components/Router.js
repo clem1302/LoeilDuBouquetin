@@ -9,6 +9,7 @@ class Router extends React.Component {
   render() {
     return (
       <BrowserRouter>
+<<<<<<< HEAD
         <div>
           <Header />
           <Switch>
@@ -17,6 +18,11 @@ class Router extends React.Component {
           </Switch>
           <Footer />
         </div>
+=======
+        <Switch>
+          <Route exact path={"/"} component={Home} />
+        </Switch>
+>>>>>>> 2f77b43... Add tests for Homepage
       </BrowserRouter>
     );
   }
