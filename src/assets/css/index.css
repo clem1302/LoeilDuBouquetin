@@ -6,7 +6,12 @@
     font-style: normal;
 }
 
-
+.bubble {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 
 .color-primary {
     color: #0288D1;

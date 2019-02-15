@@ -4,6 +4,7 @@ import logo from "../assets/images/logo.png";
 import map from "../assets/images/map.svg";
 import "../assets/css/Home.css";
 import {Link} from "react-router-dom";
+import Header from '../components/Header'
 
 class Home extends Component {
 	state = {
@@ -22,18 +23,7 @@ class Home extends Component {
 
 		return (
 			<div className="home">
-				<header>
-					<nav className="bg-primary color-white">
-						<div className="logo item">
-							<img src={logo} alt="l'oeil du bouquetin"/>
-						</div>
-						<div className="item">
-							<a href="/" className="color-white">
-								<h1 className="brand">L'oeil du bouquetin</h1>
-							</a>
-						</div>
-					</nav>
-				</header>
+				<Header/>
 				<div className="container">
 					<div className="titles">
 						<h2>Carte intéractive</h2>
@@ -72,6 +62,9 @@ class Home extends Component {
 							</div>;
 						})}
 					</div>
+				</div>
+				<div className="bottom">
+
 				</div>
 			</div>
 		);

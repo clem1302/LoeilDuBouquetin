@@ -1,0 +1,50 @@
+.slick-next:before, .slick-prev:before{
+    color: black;
+}
+
+.container{
+    display:flex;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.container > .left{
+    width: 40%;
+    padding: 0 100px 0 0;
+}
+.container > .left > div{
+    margin-bottom: 50px;
+}
+
+.container > .right{
+    width: 60%;
+}
+
+.informations{
+    display: flex;
+}
+.informations > div{
+    width: 50%;
+}
+
+.title{
+    width: 100%;
+}
+
+.bubble{
+    float: left;
+}
+
+.clearfix{
+    clear: both;}
+
+.informations > .left > div{
+    margin-bottom: 50px;
+}
+.tag{
+    background-color: whitesmoke;
+    padding: 5px 10px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+}
