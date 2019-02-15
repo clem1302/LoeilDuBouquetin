@@ -22,7 +22,7 @@ class Home extends Component {
 			<div className="home">
 				<div className="container">
 					<div className="titles">
-						<h2>Carte intéractive</h2>
+						<h2>Carte Interactive</h2>
 						{currentStation && <h2>{currentStation}</h2>}
 					</div>
 					<div className="left">
@@ -78,7 +78,7 @@ class Home extends Component {
 		e.currentTarget.style.fill = "#ac3737";
 		const mountains            = {
 			corse: "Corse",
-			med: "Pyrénés",
+			med: "Pyrénées",
 			centre: "Massif central",
 			alpesud: "Alpes du sud",
 			alpenord: "Alpes du nord",

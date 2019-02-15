@@ -10,6 +10,10 @@
     object-fit: contain;
 }
 
+.text-center{
+    text-align: center;
+}
+
 .bubble {
     height: 18px;
     width: 18px;
