@@ -1,2 +1,2 @@
-const getName = (state) => state.app.get('name');
+const getName = state => state.app.get("name");
 export default getName;

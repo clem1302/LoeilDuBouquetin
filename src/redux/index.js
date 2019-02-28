@@ -1,8 +1,8 @@
-import {combineReducers, createStore} from "redux";
-import app from './reducers/app'
+import { combineReducers, createStore } from "redux";
+import app from "./reducers/app";
 
 const reducer = combineReducers({
-	app
+  app
 });
 
 const store = createStore(reducer);

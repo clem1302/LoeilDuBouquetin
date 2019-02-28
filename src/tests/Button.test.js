@@ -1,8 +1,7 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import Button from '../components/Button';
+import React from "react";
+import { shallow } from "enzyme";
+import Button from "../components/Button";
 
-it('renders without crashing', () => {
-
+it("renders without crashing", () => {
   shallow(<Button />);
 });
