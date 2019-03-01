@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Button from "../components/Button";
+import Router from "../../components/Router";
 
 it("renders without crashing", () => {
-  shallow(<Button />);
+  shallow(<Router />);
 });

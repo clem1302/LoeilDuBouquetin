@@ -179,9 +179,15 @@ class Station extends React.Component {
                   <br/>
                   <div>
                     <b>Particularités : </b>
+<<<<<<< HEAD
                     <br/>
                     {station.styles.map(s => (
                       <div className="tag">{s}</div>
+=======
+                    <br />
+                    {station.styles.map((s, i) => (
+                      <div className="tag" key={i}>{s}</div>
+>>>>>>> Test'
                     ))}
                   </div>
                   <div className="clearfix"/>
