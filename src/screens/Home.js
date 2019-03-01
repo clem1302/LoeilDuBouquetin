@@ -8,7 +8,8 @@ import FeaturedStations from "../components/FeaturedStations";
 class Home extends Component {
   state = {
     currentStation: undefined,
-    stations: undefined
+    stations: undefined,
+	  loading: false,
   };
 
   componentDidMount() {
@@ -16,7 +17,7 @@ class Home extends Component {
   }
 
   render() {
-    const { stations, currentStation } = this.state;
+    const { stations, currentStation , loading} = this.state;
 
     return (
       <div className="home">
@@ -31,6 +32,7 @@ class Home extends Component {
             </object>
           </div>
           <div className="right stationslist">
+	          {loading && <img src="https://loading.io/spinners/sunflag/lg.sunflag-ajax-spinner.gif" alt="loader" height="200" style={{margin: '0 auto'}}/>}
             {stations &&
               stations.map(station => {
                 const nb_pistes = station.open_domains.info;
@@ -82,7 +84,7 @@ class Home extends Component {
   }
 
   resetStations = () => {
-    this.setState({ stations: null, currentStation: null });
+    this.setState({ stations: null, currentStation: null, loading: false,});
     for (let mountain of this.mountains) {
       mountain.style.fill = null;
     }
@@ -90,37 +92,42 @@ class Home extends Component {
 
   fetchStations = async e => {
     this.resetStations();
-    const mountain = e.currentTarget.id;
-    e.currentTarget.style.fill = "#ac3737";
-    const mountains = {
-      corse: "Corse",
-      med: "Pyrénées",
-      centre: "Massif central",
-      alpesud: "Alpes du sud",
-      alpenord: "Alpes du nord",
-      jura: "Jura",
-      vosges: "Vosges"
-    };
-    this.setState({
-      currentStation: mountains[mountain]
-    });
+    this.setState({loading: true})
+    try{
+	    const mountain = e.currentTarget.id;
+	    e.currentTarget.style.fill = "#ac3737";
+	    const mountains = {
+		    corse: "Corse",
+		    med: "Pyrénées",
+		    centre: "Massif central",
+		    alpesud: "Alpes du sud",
+		    alpenord: "Alpes du nord",
+		    jura: "Jura",
+		    vosges: "Vosges"
+	    };
+	    this.setState({
+		    currentStation: mountains[mountain]
+	    });
 
-    const massif = {
-      corse: "corse",
-      med: "pyrenees",
-      centre: "massif central",
-      alpesud: "alpes du sud",
-      alpenord: "alpes du nord",
-      jura: "jura",
-      vosges: "vosges"
-    };
+	    const massif = {
+		    corse: "corse",
+		    med: "pyrenees",
+		    centre: "massif central",
+		    alpesud: "alpes du sud",
+		    alpenord: "alpes du nord",
+		    jura: "jura",
+		    vosges: "vosges"
+	    };
 
-    const response = await axios.get(
-      "https://ski-station-api.herokuapp.com/api/v1/stations?massif=" +
-        massif[mountain]
-    );
-    const data = response.data;
-    this.setState({ stations: data });
+	    const response = await axios.get(
+		    "https://ski-station-api.herokuapp.com/api/v1/stations?massif=" +
+		    massif[mountain]
+	    );
+	    const data = response.data;
+	    this.setState({ stations: data });
+    }finally {
+	    this.setState({loading: false})
+    }
   };
 
   setUpMap = () => {
