@@ -20,7 +20,7 @@ class Station extends React.Component {
     const { station } = this.state;
     if (!station) return null;
     return (
-      <div className="station">
+      <div className="station minheight">
         <div className="container">
           <div className="title">
             <h1>{station.name}</h1>
@@ -63,10 +63,8 @@ class Station extends React.Component {
             <div className="informations">
               <div className="left">
                 <div className="meteo">
-                  <div>
-                    <b>
-                      <u>Météo</u>
-                    </b>
+                  <div className="d-flex align-items-center">
+                    <img src="https://image.flaticon.com/icons/svg/118/118755.svg" alt="weather" height="14"/><b>&nbsp;<u>Météo</u></b>
                   </div>
                   <div className="weather">
                     <br />
@@ -101,8 +99,10 @@ class Station extends React.Component {
                   </div>
                 </div>
                 <div className="state">
-                  <div>
-                    <b>
+                  <div className="d-flex align-items-center">
+
+	                  <img src="https://image.flaticon.com/icons/svg/883/883360.svg" alt="piste" height="14"/>
+                    <b>&nbsp;
                       <u>Etat de la station</u>
                     </b>
                   </div>
@@ -155,8 +155,9 @@ class Station extends React.Component {
               </div>
               <div className="right">
                 <div className="infos">
-                  <div>
-                    <b>
+                  <div className="d-flex align-items-center">
+	                  <img src="https://image.flaticon.com/icons/svg/685/685815.svg" alt="information" height="14"/>
+                    <b>&nbsp;
                       <u>Infos pratiques</u>
                     </b>
                   </div>
@@ -179,8 +180,9 @@ class Station extends React.Component {
                   </div>
                   <div className="clearfix" />
                   <br />
-                  <div>
-                    <b>Pistes</b>
+                  <div className="d-flex align-items-center">
+	                  <img src="https://image.flaticon.com/icons/svg/1412/1412921.svg" alt="piste" height="14"/>
+                    <b>&nbsp;<u>Pistes</u></b>
                   </div>
                   <br />
                   <div>
