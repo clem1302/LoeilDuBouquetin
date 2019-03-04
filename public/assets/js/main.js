@@ -6,11 +6,19 @@ image.style.left      = "50%";
 image.style.transform = "translate(-50%, -50%)";
 image.style.zIndex    = 9999999;
 
-var egg = new Egg("up,up,down,down,left,right,left,right,b,a", function () {
+var egg = new Egg("up,up,down,down,left,right,left,right,b,a", function() {
 
-	document.body.appendChild(image);
-	setTimeout(function () {
-		document.body.removeChild(image);
-	}, 3000);
+  let counter = 1;
+  while (counter++ < 100) {
+    setTimeout(() => {
+      const dimage      = image.cloneNode();
+      dimage.style.top  = ((Math.random() * 80) + 10) + "%";
+      dimage.style.left = ((Math.random() * 80) + 10) + "%";
+      document.body.appendChild(dimage);
+      setTimeout(function() {
+        document.body.removeChild(dimage);
+      }, 3000);
+    }, counter * 10);
+  }
 
 }).listen();
