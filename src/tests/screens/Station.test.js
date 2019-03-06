@@ -1,9 +1,8 @@
 import { shallow } from "enzyme";
 import React from "react";
 import Station from "../../screens/Station";
-import Router from "react-router-dom";
 
-const stationMock =  {
+const stationMock = {
   id: 1223443,
   massif: "alpes du nord",
   code: "aillons--margeriaz",
@@ -16,22 +15,7 @@ const stationMock =  {
   partial_opening: null,
   snowpark: 0,
   images: [
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_large/public/station/hiver/-GLM4352-2.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_large/public/station/hiver/AI10-0250.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_large/public/station/hiver/1500AI10-0024.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_large/public/station/hiver/P12-2-b.JPG",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_large/public/station/hiver/ILM-9625-2.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_large/public/station/hiver/AI10-0262-redim.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_large/public/station/ete/-GLM4352-2.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_large/public/station/ete/ILM-9625-2.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_thumb/public/station/hiver/-GLM4352-2.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_thumb/public/station/hiver/AI10-0250.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_thumb/public/station/hiver/1500AI10-0024.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_thumb/public/station/hiver/P12-2-b.JPG",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_thumb/public/station/hiver/ILM-9625-2.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_thumb/public/station/hiver/AI10-0262-redim.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_thumb/public/station/ete/-GLM4352-2.jpg",
-    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_thumb/public/station/ete/ILM-9625-2.jpg"
+    "https://www.france-montagnes.com/sites/default/files/styles/station_slideshow_large/public/station/hiver/-GLM4352-2.jpg"
   ],
   styles: [
     "stations nouvelles glisses",
@@ -79,9 +63,7 @@ const stationMock =  {
 };
 
 it("renders without crashing", () => {
-const wrapper = shallow(
-    <Station  match={{params: { station: "ski" }}}/>
-);
-wrapper.setState({ station: stationMock });
+  const wrapper = shallow(<Station match={{ params: { station: "ski" } }} />);
+  wrapper.setState({ station: stationMock });
   expect(wrapper.find(".station"));
 });
