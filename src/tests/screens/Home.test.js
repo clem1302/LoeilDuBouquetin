@@ -67,17 +67,5 @@ describe("Home page", function() {
     expect(instance.state.stations).toEqual(STATION_MOCK);
   });
 
-  it("should mount correctly", function() {
-    const spy = sinon.spy(Home.prototype, "componentDidMount");
-    const wrapper = mount(<Home />);
-    expect(Home.prototype.componentDidMount.calledOnce).toBe(true);
-  });
-
-  it("should called setUpMap correctly", function() {
-    const wrapper = mount(<Home />);
-    jest.spyOn(wrapper.instance(), "setUpMap");
-    wrapper.instance().componentDidMount();
-    expect(wrapper.instance().setUpMap).toHaveBeenCalledTimes(1);
-  });
 
 });

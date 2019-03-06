@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import map from "../assets/images/map.svg";
 import "../assets/css/Home.css";
 import { Link } from "react-router-dom";
 import FeaturedStations from "../components/FeaturedStations";
+import CustomMap from "../components/CustomMap"
 
 class Home extends Component {
   state = {
@@ -12,9 +12,6 @@ class Home extends Component {
     loading: false
   };
 
-  componentDidMount() {
-    this.setUpMap();
-  }
 
   render() {
     const { stations, currentStation, loading } = this.state;
@@ -27,9 +24,7 @@ class Home extends Component {
             {currentStation && <h2>{currentStation}</h2>}
           </div>
           <div className="left">
-            <object data={map} className="map" type="text/html">
-              Can't read SVG
-            </object>
+            <CustomMap fetchStations={this.fetchStations} parent={this}/>
           </div>
           <div className="right stationslist">
             {loading && (
@@ -139,27 +134,6 @@ class Home extends Component {
     }
   };
 
-  setUpMap = () => {
-    const map = document.body.querySelector(".map");
-    if (!map) return false;
-    map.onload = () => {
-      const mountains = map.contentDocument.querySelectorAll(
-        "#layer101 > path"
-      );
-      this.mountains = mountains;
-      for (let mountain of mountains) {
-        mountain.style.cursor = "pointer";
-        mountain.addEventListener("mouseenter", function() {
-          if (this.style.fill !== "rgb(172, 55, 55)")
-            this.style.fill = "#FF5252";
-        });
-        mountain.addEventListener("mouseleave", function() {
-          if (this.style.fill !== "rgb(172, 55, 55)") this.style.fill = null;
-        });
-        mountain.addEventListener("click", this.fetchStations);
-      }
-    };
-  };
 }
 
 export default Home;
