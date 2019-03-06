@@ -134,6 +134,7 @@ class Home extends Component {
 
   setUpMap = () => {
     const map  = document.body.querySelector(".map");
+    if(!map) return false;
     map.onload = () => {
       const mountains = map.contentDocument.querySelectorAll(
         "#layer101 > path"

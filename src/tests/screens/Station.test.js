@@ -1,6 +1,7 @@
+import { shallow } from "enzyme";
 import React from "react";
-import { mount } from "enzyme";
 import Station from "../../screens/Station";
+import Router from "react-router-dom";
 
 const stationMock =  {
   id: 1223443,
@@ -78,7 +79,9 @@ const stationMock =  {
 };
 
 it("renders without crashing", () => {
-const wrapper = mount(<Station  match={{params: { station: "ski" }}}/>);
+const wrapper = shallow(
+    <Station  match={{params: { station: "ski" }}}/>
+);
 wrapper.setState({ station: stationMock });
   expect(wrapper.find(".station"));
 });
