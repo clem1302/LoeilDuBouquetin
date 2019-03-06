@@ -37,9 +37,9 @@ class FeaturedStations extends React.Component {
                   key={station.id}
                   style={{
                     backgroundImage:
-                    "url(" +
-                    (station.images && station.images[0]) +
-                    "),url(https://i.pinimg.com/originals/ba/5c/d4/ba5cd4ab883552ebd22932317aa0d5a0.jpg)",
+                      "url(" +
+                      (station.images && station.images[0]) +
+                      "),url(https://i.pinimg.com/originals/ba/5c/d4/ba5cd4ab883552ebd22932317aa0d5a0.jpg)",
                     backgroundPosition: "center",
                     backgroundSize: "cover"
                   }}
@@ -49,19 +49,19 @@ class FeaturedStations extends React.Component {
                     <div className="nbpiste">{nb_pistes}</div>
                     <div className="pistes">
                       <div className="green">
-                        <div className="bubble bg-green"/>
+                        <div className="bubble bg-green" />
                         {station.open_domains["green"]}
                       </div>
                       <div className="blue">
-                        <div className="bubble bg-blue"/>
+                        <div className="bubble bg-blue" />
                         {station.open_domains["blue"]}
                       </div>
                       <div className="red">
-                        <div className="bubble bg-red"/>
+                        <div className="bubble bg-red" />
                         {station.open_domains["red"]}
                       </div>
                       <div className="black">
-                        <div className="bubble bg-black"/>
+                        <div className="bubble bg-black" />
                         {station.open_domains["black"]}
                       </div>
                     </div>

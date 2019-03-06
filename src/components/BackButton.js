@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 
 class BackButton extends React.Component {
   render() {
-    return <div className="backbutton">
-      <Link to="/">&lArr; Précédent</Link>
-    </div>;
+    return (
+      <div className="backbutton">
+        <Link to="/">&lArr; Précédent</Link>
+      </div>
+    );
   }
 }
 
