@@ -84,11 +84,7 @@ const stationsMock = [
 describe("The FeaturedStations component should ", () => {
 
   it("renders without crashing", () => {
-    const wrapper = mount(
-      <Router>
-        <FeaturedStations />
-      </Router>
-    );
+    const wrapper = shallow(<FeaturedStations />);
     wrapper.setState({ stations: stationsMock });
     expect(wrapper.find({ key: "13223" })).toBeTruthy();
   });
