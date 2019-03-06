@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import Home from "../screens/Home";
+import Home from "../../screens/Home";
 import axios from "axios";
 import sinon from 'sinon';
 
