@@ -13,7 +13,7 @@ class Station extends React.Component {
 
   componentDidMount() {
     const { match } = this.props;
-    const code      = match.params.station;
+    const code = match.params.station;
     this.fetchDetails(code);
   }
 
@@ -23,7 +23,7 @@ class Station extends React.Component {
     return (
       <div className="station minheight">
         <div className="container">
-          <BackButton/>
+          <BackButton />
           <div className="title">
             <h1>{station.name}</h1>
           </div>
@@ -40,7 +40,7 @@ class Station extends React.Component {
               >
                 {station.images.length > 0 ? (
                   station.images.map((i, index) => (
-                    <img src={i} alt={index} key={index}/>
+                    <img src={i} alt={index} key={index} />
                   ))
                 ) : (
                   <img
@@ -66,10 +66,17 @@ class Station extends React.Component {
               <div className="left">
                 <div className="meteo">
                   <div className="d-flex align-items-center">
-                    <img src="https://image.flaticon.com/icons/svg/118/118755.svg" alt="weather" height="14"/><b>&nbsp;<u>Météo</u></b>
+                    <img
+                      src="https://image.flaticon.com/icons/svg/118/118755.svg"
+                      alt="weather"
+                      height="14"
+                    />
+                    <b>
+                      &nbsp;<u>Météo</u>
+                    </b>
                   </div>
                   <div className="weather">
-                    <br/>
+                    <br />
                     <div>
                       <b>Ciel : </b>
                       {station.weather && station.weather.state}
@@ -77,16 +84,16 @@ class Station extends React.Component {
                     <div>
                       <b>Matin : </b>
                       {station.weather &&
-                      station.weather.morning &&
-                      station.weather.morning.replace("Matin", "")}
+                        station.weather.morning &&
+                        station.weather.morning.replace("Matin", "")}
                     </div>
                     <div>
                       <b>Après-midi : </b>
                       {station.weather &&
-                      station.weather.afternoon &&
-                      station.weather.afternoon.replace("Après-midi", "")}
+                        station.weather.afternoon &&
+                        station.weather.afternoon.replace("Après-midi", "")}
                     </div>
-                    <br/>
+                    <br />
                     <div>
                       <b>Enneigement</b>
                     </div>
@@ -102,55 +109,55 @@ class Station extends React.Component {
                 </div>
                 <div className="state">
                   <div className="d-flex align-items-center">
-
-                    <img src="https://image.flaticon.com/icons/svg/883/883360.svg" alt="piste" height="14"/>
-                    <b>&nbsp;
+                    <img
+                      src="https://image.flaticon.com/icons/svg/883/883360.svg"
+                      alt="piste"
+                      height="14"
+                    />
+                    <b>
+                      &nbsp;
                       <u>Etat de la station</u>
                     </b>
                   </div>
-                  <br/>
+                  <br />
                   <div>{station.state}</div>
-                  <br/>
+                  <br />
 
                   <div>
                     <b>Pistes ouvertes : </b>
                     {station.open_domains && station.open_domains.info}
                   </div>
-                  <br/>
+                  <br />
                   <div className="green">
                     <span>
-                      <div className="bubble bg-green"/>
-                      {" "}
+                      <div className="bubble bg-green" />{" "}
                       {station.open_domains && station.open_domains["green"]}{" "}
                       station(s) verte(s)
                     </span>
                   </div>
                   <div className="blue">
                     <span>
-                      <div className="bubble bg-blue"/>
-                      {" "}
+                      <div className="bubble bg-blue" />{" "}
                       {station.open_domains && station.open_domains["blue"]}{" "}
                       station(s) bleue(s)
                     </span>
                   </div>
                   <div className="red">
                     <span>
-                      <div className="bubble bg-red"/>
-                      {" "}
+                      <div className="bubble bg-red" />{" "}
                       {station.open_domains && station.open_domains["red"]}{" "}
                       station(s) rouge(s)
                     </span>
                   </div>
                   <div className="black">
                     <span>
-                      <div className="bubble bg-black"/>
-                      {" "}
+                      <div className="bubble bg-black" />{" "}
                       {station.open_domains && station.open_domains["black"]}{" "}
                       station(s) noire(s)
                     </span>
                   </div>
-                  <div className="clearfix"/>
-                  <br/>
+                  <div className="clearfix" />
+                  <br />
                   <div>
                     <b>
                       Mise à jour le{" "}
@@ -162,12 +169,17 @@ class Station extends React.Component {
               <div className="right">
                 <div className="infos">
                   <div className="d-flex align-items-center">
-                    <img src="https://image.flaticon.com/icons/svg/685/685815.svg" alt="information" height="14"/>
-                    <b>&nbsp;
+                    <img
+                      src="https://image.flaticon.com/icons/svg/685/685815.svg"
+                      alt="information"
+                      height="14"
+                    />
+                    <b>
+                      &nbsp;
                       <u>Infos pratiques</u>
                     </b>
                   </div>
-                  <br/>
+                  <br />
                   <div>
                     <b>Altitude : </b>
                     {station.altitude}
@@ -176,21 +188,27 @@ class Station extends React.Component {
                     <b>Horaires : </b>
                     {station.opening}
                   </div>
-                  <br/>
+                  <br />
                   <div>
                     <b>Particularités : </b>
-                    <br/>
-                    {station.styles.map(s => (
-                      <div className="tag">{s}</div>
+                    <br />
+                    {station.styles.map((s, i) => (
+                      <div className="tag" key={i}>{s}</div>
                     ))}
                   </div>
-                  <div className="clearfix"/>
-                  <br/>
+                  <div className="clearfix" />
+                  <br />
                   <div className="d-flex align-items-center">
-                    <img src="https://image.flaticon.com/icons/svg/1412/1412921.svg" alt="piste" height="14"/>
-                    <b>&nbsp;<u>Pistes</u></b>
+                    <img
+                      src="https://image.flaticon.com/icons/svg/1412/1412921.svg"
+                      alt="piste"
+                      height="14"
+                    />
+                    <b>
+                      &nbsp;<u>Pistes</u>
+                    </b>
                   </div>
-                  <br/>
+                  <br />
                   <div>
                     <b>Distance : </b>
                     {station.domains.info}
@@ -198,8 +216,8 @@ class Station extends React.Component {
                   <div>
                     <b>Pistes totales : </b>
                     {station.open_domains &&
-                    station.open_domains.info &&
-                    station.open_domains.info.split(" ").pop()}
+                      station.open_domains.info &&
+                      station.open_domains.info.split(" ").pop()}
                   </div>
                 </div>
               </div>
