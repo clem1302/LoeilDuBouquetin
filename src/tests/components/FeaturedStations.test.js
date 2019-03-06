@@ -1,7 +1,8 @@
 import React from "react";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 import { BrowserRouter as Router } from "react-router-dom";
 import FeaturedStations from "../../components/FeaturedStations";
+import renderer from 'react-test-renderer';
 
 const stationsMock = [
   {
@@ -80,12 +81,15 @@ const stationsMock = [
   }
 ];
 
-it("renders without crashing", () => {
-  const wrapper = mount(
-    <Router>
-      <FeaturedStations />
-    </Router>
-  );
-  wrapper.setState({ stations: stationsMock });
-  expect(wrapper.find(".item"));
+describe("The FeaturedStations component should ", () => {
+  it("renders without crashing", () => {
+    const wrapper = mount(
+      <Router>
+        <FeaturedStations />
+      </Router>
+    );
+    wrapper.setState({ stations: stationsMock });
+    expect(wrapper.find({key:'13223'})).toBeTruthy();
+  });
 });
+
